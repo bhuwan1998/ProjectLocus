@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:practice/Practice/CourseClass.dart';
 import 'package:practice/Practice/CourseType.dart';
+import 'package:practice/Practice/classTime.dart';
 import 'package:practice/Practice/form.dart';
 
 
@@ -217,7 +218,7 @@ class _CoursesState extends State<Course> {
         onPressed: () {
           Navigator.push(
             context,
-            new MaterialPageRoute(builder: (context) => MyCustomForm() ),
+            new MaterialPageRoute(builder: (context) => ClassTime(courseName) ),
           );
          },
         child: Icon(Icons.add),

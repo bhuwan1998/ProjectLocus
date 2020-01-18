@@ -6,7 +6,7 @@ class User {
   List<Courses> courses = []; // a list of courses which is expandable
   
 
-  void createCourse(String courseName, CourseType type, List<DateTime> time, bool repeats){
+  void createCourse(String courseName, List<int> daysPerWeek, CourseType type, List<DateTime> time, bool repeats){
     if(this.getCourseByName(courseName) == null) {
       this.courses.add(new Courses(courseName, type) );
     }

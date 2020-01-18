@@ -1,6 +1,8 @@
  import 'package:flutter/material.dart';
+import 'package:practice/Practice/classTime.dart';
 import 'package:practice/Practice/courses.dart';
 import 'package:practice/Practice/overview.dart';
+import 'User.dart';
 
 
 
@@ -27,7 +29,7 @@ import 'package:practice/Practice/overview.dart';
 
 class MyHomePage extends StatefulWidget {
       MyHomePage({Key key, this.title}) : super(key: key);
-    
+      static User theUser = new User();
       final String title;
       @override
       _MyHomePageState createState() => _MyHomePageState();
@@ -182,7 +184,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: TextField( 
                   autocorrect: true,
                   autofocus: true,
-                  onChanged: (text) {courseNames = text;
+                  onChanged: (text) {
+                  courseNames = text;
                   courses.add(courseNames);
                   },
                   obscureText: false,
@@ -214,7 +217,16 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
-         
+          SizedBox(height: 10,),
+          RaisedButton(
+            child: Text('Days overview'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => new ClassTime(courseNames))
+              );
+            } ,
+          ),
           
           
           ],
