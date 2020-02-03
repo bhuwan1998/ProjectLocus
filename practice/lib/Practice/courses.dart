@@ -114,13 +114,6 @@ class _CoursesState extends State<Course> {
   TextStyle style =
       TextStyle(fontFamily: "Montserrat", fontSize: 25, color: Colors.black);
 
-  void increment() {
-    setState(() {
-      uiCourseNo++;
-    });
-
-  }
-
   @override
   Widget build(BuildContext context) {
   
