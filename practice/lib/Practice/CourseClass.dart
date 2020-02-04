@@ -4,20 +4,20 @@ import 'CourseType.dart';
 
 
 // Name, type, occurrence
-class Courses{
-
-  List<Occurrence> occurrences;
-  String courseNameNum = "";
+class Courses{  
+  // List of occurrences 
+  List<Occurrence> occurrences; 
+  String courseNameNum = ""; //courseName and number 
   CourseType type;
 
 
-  Courses(String courseNameNum, CourseType type){
+  Courses(String courseNameNum, CourseType type){ // constructor for the course class
     this.courseNameNum = courseNameNum;
     this.type = type;
   }
 
   void setNameOfCourse(String nameOfCourse){
-  this.courseNameNum = nameOfCourse;
+  this.courseNameNum = nameOfCourse;    // here we set the name of the course 
 }
   
   String getNameOfCourse() {

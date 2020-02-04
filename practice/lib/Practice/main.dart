@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           style: style,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(top: 20,left: 30.0, right: 30.0),
-              hintText: "Your Full Name",
+              hintText: "Your Full Name",  /** text fields for storing names */
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
         );
@@ -62,27 +62,30 @@ class _MyHomePageState extends State<MyHomePage> {
           style: style,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(top: 30, right: 30, left: 30),
-              hintText: "University Name",
+              hintText: "University Name", /** text fields for storing university name */
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
         );
         final loginButon = Material(
-          elevation: 10.0,
+          elevation: 25.0,
           borderRadius: BorderRadius.circular(32.0),
-          color: Color(0xff01A0C7),
+          color: Colors.grey.shade300,
           child: MaterialButton(
+            elevation: 20,
             minWidth: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(15),
             onPressed: () {
+              if(uniName.length > 4 && fullName.length >= 3){
               Navigator.push(
                 context,
-                new MaterialPageRoute(builder: (context) => new Course())
-              );
+                new MaterialPageRoute(builder: (context) => new Course()),
+               );
+              }
             },
             child: Text("Next",
                 textAlign: TextAlign.center,
                 style: style.copyWith(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
+                    color: Colors.black.withOpacity(0.5), fontWeight: FontWeight.bold),),
           ),
         );
 
@@ -90,29 +93,53 @@ class _MyHomePageState extends State<MyHomePage> {
           resizeToAvoidBottomInset: false,
           body: Center(
             child: Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(36.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+              color: Colors.grey.shade300,
+             // height: 600,
+              //width: 400,
+               child: Center(child: Container(
+                height: 400,
+                 width: 290,
+                 decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [BoxShadow(
+                    offset: Offset(10,10),
+                    color: Colors.black38,
+                    blurRadius: 20
+                  ),
+                  BoxShadow(
+                    offset: Offset(-10,-10),
+                    color: Colors.white.withOpacity(0.85),
+                    blurRadius: 20
+                  )
+                  ]
+                ),
+                  child: Padding(
+                     padding: const EdgeInsets.all(36.0),
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.center,
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: <Widget>[
                   
-                    SizedBox(height: 45.0),
-                    name,
-                    SizedBox(height: 25.0),
-                    univName,
-                    SizedBox(
-                      height: 35.0,
-                    ),
-                    loginButon,
-                    SizedBox(
-                      height: 15.0,
+                         SizedBox(
+                         height: 45.0),
+                         name,
+                        SizedBox(
+                         height: 25.0),
+                         univName,
+                        SizedBox(
+                         height: 35.0,
+                          ),
+                        loginButon,
+                         SizedBox(
+                         height: 15.0,
                     ),
                   ],
                 ),
               ),
             ),
+           ),
+          ),
           ),
         );
       }
@@ -120,6 +147,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/*
   class SecondRoute extends StatefulWidget{
 
       @override
@@ -235,4 +274,4 @@ class _MyHomePageState extends State<MyHomePage> {
      );
     }
   }
-
+*/

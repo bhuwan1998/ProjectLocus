@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practice/Practice/CourseType.dart';
+import 'package:practice/Practice/courses.dart';
 import 'package:practice/Practice/main.dart';
+import 'package:practice/Practice/Dashboard.dart';
 
 class ClassTime extends StatefulWidget{
   String name;
@@ -29,7 +31,7 @@ class _ClassTimeState extends State<ClassTime>{
     this.courseName = name;
   }
 
-  TextStyle weekdayStyle = TextStyle(fontFamily: 'Avenir', fontSize: 10, fontWeight: FontWeight.bold);
+  TextStyle weekdayStyle = TextStyle(fontFamily: 'Avenir', fontSize: 12, fontWeight: FontWeight.bold);
   TextStyle titles = TextStyle(fontFamily: 'Avenir', fontSize: 20, fontWeight: FontWeight.bold );
 
   classTime(String courseName){
@@ -245,15 +247,16 @@ class _ClassTimeState extends State<ClassTime>{
               ),
             ),
             RaisedButton(
-              
+              hoverElevation: 50,
               elevation: 20,
               color: Colors.blue,
               onPressed: () {
                 if( this.days.length > 0 && this.timeFrom != null && this.timeto != null) {
                   createCourse();
-                  Navigator.pop(
+                  Navigator.push(
                     context,
-                    );
+                    new MaterialPageRoute(builder: (context) => new Course()),
+                  );
                 }
               },
               child: Text('Add Course', style: TextStyle(fontFamily: 'Avenir', fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
@@ -283,6 +286,10 @@ class _ClassTimeState extends State<ClassTime>{
     times.add(timeEnd);
     CourseType type;
     MyHomePage.theUser.createCourse(this.courseName, this.days, type , times, this.repeats);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WeekView()),
+    );
 
   }
 

@@ -40,14 +40,20 @@ class HomePage extends StatefulWidget{
       return Scaffold(
         appBar: AppBar(title: Text('Flutter Calendar')),
         body: SingleChildScrollView(
-          child: Column(
+          child: Center(
+            child: Container(
+            height: 500,
+            width: 400,
+            child: Column(
+            
+            
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TableCalendar(
                 // changing the color of the day selected by the user 
                 initialCalendarFormat: CalendarFormat.week,
                 calendarStyle: CalendarStyle(
-                  todayColor: Colors.orange,
+                  todayColor: Colors.black,
                   selectedColor: Theme.of(context).primaryColor,
                   todayStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.8, color: Colors.white),
                 ),
@@ -68,13 +74,13 @@ class HomePage extends StatefulWidget{
             
 
             
-            ],
+                ],
             
-          ),
+              ),
           
-        ),
-        
-
+           ),
+          ),
+         ),
       );
     }
 }
