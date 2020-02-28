@@ -23,7 +23,7 @@ dependencies:
   table_calendar: ^2.2.1
   font_awesome_flutter: ^8.5.0
   smooth_star_rating: ^1.0.3
-  charts_flutter: ^0.5.0
+  charts_flutter: ^0.8.1
   sqflite: ^1.2.0
   path_provider: any
   moor_flutter: ^1.4.0
